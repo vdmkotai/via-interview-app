@@ -1,4 +1,4 @@
-import Drawer from '@mui/material/Drawer';
+import Drawer, { drawerClasses } from '@mui/material/Drawer';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { styled } from '@mui/material/styles';
@@ -24,7 +24,6 @@ const Sidebar: React.FC = ({ children }) => {
   const [isMobileDrawerOpen, setIsMobileDrawer] = React.useState(false);
 
   const handleMobileDrawerOpen = React.useCallback(() => {
-    console.log('OPEN');
     setIsMobileDrawer(true);
   }, []);
 
@@ -42,12 +41,13 @@ const Sidebar: React.FC = ({ children }) => {
           width: desktopDrawerWidth,
           backgroundColor: COLORS.drawerBgColor,
           flexShrink: 0,
-          '& .MuiDrawer-paper': {
+          [`&.${drawerClasses.paper}`]: {
             width: desktopDrawerWidth,
             boxSizing: 'border-box',
           },
         },
       }}
+      ModalProps={{ keepMounted: true }}
     >
       {children}
     </Drawer>
@@ -71,9 +71,7 @@ const Sidebar: React.FC = ({ children }) => {
         anchor="bottom"
         disableDiscovery
         hideBackdrop
-        ModalProps={{
-          keepMounted: true,
-        }}
+        ModalProps={{ keepMounted: true }}
       >
         <Box
           sx={{

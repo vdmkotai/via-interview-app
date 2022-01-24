@@ -2,7 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import LinearProgress from '@mui/material/LinearProgress';
+import LinearProgress, {
+  linearProgressClasses,
+} from '@mui/material/LinearProgress';
+import { COLORS } from '../../constants/colors';
 
 export interface BarItemProps {
   // TODO: create enum
@@ -33,15 +36,16 @@ const BarItem: React.FC<BarItemProps> = ({ type, color, value }) => (
           variant="determinate"
           value={value}
           sx={{
-            height: '3px',
+            height: '2px',
             top: '10px',
             paddingLeft: '10px',
             paddingRight: '10px',
-            colorPrimary: {
-              backgroundColor: '#00695C',
+            color: 'orange',
+            [`&.${linearProgressClasses.colorPrimary}`]: {
+              backgroundColor: COLORS.progressBgColor,
             },
-            barColorPrimary: {
-              backgroundColor: '#B2DFDB',
+            [`& .${linearProgressClasses.bar}`]: {
+              backgroundColor: color,
             },
           }}
         />
