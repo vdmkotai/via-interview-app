@@ -29,7 +29,7 @@ const App = () => {
   React.useEffect(() => {
     loadData(); // first call
 
-    intervalRef.current = () => setInterval(loadData, 1000);
+    intervalRef.current = () => setInterval(loadData, 5000);
     intervalRef.current();
 
     return () => {
