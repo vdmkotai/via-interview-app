@@ -6,6 +6,9 @@ The port for backend is specified in `src/constans/urls.ts`
 
 ## How to start the frontend app
 
+### `npm install`
+Installs all dependencies. Run this command before starting the app.
+
 ### `npm start`
 
 Runs the frontend app in the development mode.\
