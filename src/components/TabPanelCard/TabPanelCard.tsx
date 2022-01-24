@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 
 import { COLORS } from '../../constants/colors';
 import BarItem from '../BarItem';
-import { UtilizationData } from '../models/data';
+import { UtilizationData } from '../../models/data';
 
 export interface TabPanelCardProps {
   type: 'bar' | 'text';

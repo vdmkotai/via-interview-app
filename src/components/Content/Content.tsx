@@ -6,7 +6,7 @@ import axios, { AxiosResponse } from 'axios';
 
 import TabPanel from '../TabPanel/TabPanel';
 import TabPanelCard from '../TabPanelCard';
-import { UtilizationData } from '../models/data';
+import { UtilizationData } from '../../models/data';
 import { API_URL } from '../../constants/urls';
 
 const a11yProps = (index: number) => ({
